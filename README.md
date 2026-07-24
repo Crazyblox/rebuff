@@ -15,11 +15,11 @@ local rebuff = require(`./rebuff`)
 -- Let's create a buffer to reason with.
 local b = buffer.create(32)
 
--- Say we have a vector... let's store that in the buffer with rebuff.packf32().
+-- We have a vector, let's store that in the buffer with rebuff.packf32().
 local v_pack = vector.create(8, 16, 24)
 rebuff.packf32(b, 0, v_pack.x, v_pack.y, v_pack.z)
 
--- Say we need to interact with the data as a vector from the buffer... let's do direct data-to-constructor!
+-- We want to interact with data as a vector from the buffer, let's do direct data-to-constructor.
 local v_unpack = (vector.create :: any)(rebuff.unpackf32(b, 0, 3))
 print(v_unpack) --> vector(8, 16, 24)
 ```

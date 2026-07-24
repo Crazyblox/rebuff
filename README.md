@@ -5,6 +5,8 @@ Performance has been considered while writing this module; use of the stack and 
 
 This module was created after proposing the [buffer.pack*/unpack* Luau RFC](https://github.com/luau-lang/rfcs/pull/233).
 
+As this solution is designed around the stack, the hard-limit on how much can be read/written from depends on the stack.
+
 ## How to use:
 ```luau
 -- Require the module

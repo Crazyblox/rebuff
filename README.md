@@ -1,5 +1,9 @@
 # rebuff
-Helper module for improved interactions with Luau's buffer type.
+Helper module designed to help reduce the verbosity of interacting with Luau's buffer type.
+
+Performance has been considered while writing this module; use of the stack and self-recursive calls exceeds other user code, with the only exception being hard-coded user read/write functions.
+
+This module was created after proposing the [buffer.pack*/unpack* RFC](https://github.com/luau-lang/rfcs/pull/233).
 
 ## How to use:
 ```luau
